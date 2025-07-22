@@ -26,6 +26,19 @@ git clone https://github.com/NTKien-ptitt/Exploit-_Paths_Website.git
 ---
 
 ---
+
+webscan vulnerability
+
+```
+apt update
+sudo apt install golang
+go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
+nuclei -update-templates
+nuclei -u https://dienmayxanhbantragop.com -t /home/kali/.local/nuclei-templates
+```
+
+
+---
 # 4.4 Osmedeus
 GitHub: https://github.com/j3ssie/Osmedeus
 ```
