@@ -24,14 +24,7 @@ git clone https://github.com/NTKien-ptitt/Exploit-_Paths_Website.git
 
 -> đang kiểm tra robots.txt của website này trên Wayback Machine (web.archive.org) để tìm các đường dẫn mà có thể đã từng bị chặn hoặc được liệt kê trong quá khứ.hai đường dẫn đã từng xuất hiện trong file robots.txt là dienmayxanhbantragop.com/administrator/ dienmayxanhbantragop.com/cgi-bin/
 ---
-# 4.3 reconFTW
-GitHub: https://github.com/six2dez/reconftw
-```
-git clone https://github.com/six2dez/reconftw
-cd reconftw
-./install.sh
-./reconftw.sh -d target.com -r
-```
+
 ---
 # 4.4 Osmedeus
 GitHub: https://github.com/j3ssie/Osmedeus
