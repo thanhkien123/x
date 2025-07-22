@@ -5,7 +5,7 @@ cd findomain
 cargo build --release
 sudo cp target/release/findomain /usr/bin/
 findomain
-dienmayxanhbantragop.com
+findomain -t dienmayxanhbantragop.com
 ```
 <img width="845" height="736" alt="image" src="https://github.com/user-attachments/assets/6a7e56d4-24b0-4a10-9f04-0dd872ff801a" />
 
@@ -26,6 +26,20 @@ git clone https://github.com/NTKien-ptitt/Exploit-_Paths_Website.git
 ---
 # 4.3 reconFTW
 GitHub: https://github.com/six2dez/reconftw
+```
+git clone https://github.com/six2dez/reconftw
+cd reconftw
+./install.sh
+./reconftw.sh -d target.com -r
+```
 ---
 # 4.4 Osmedeus
 GitHub: https://github.com/j3ssie/Osmedeus
+```
+bash <(curl -fsSL https://raw.githubusercontent.com/osmedeus/osmedeus-base/master/install.sh)
+go install -v github.com/j3ssie/osmedeus@latest
+
+osmedeus scan -f vuln -t example.com           # Scan lỗ hổng
+osmedeus scan -f extensive -t example.com      # Quét sâu và toàn diện
+```
+
