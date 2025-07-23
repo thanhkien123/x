@@ -43,4 +43,24 @@ Sau khi quá trình recon va scanning hoàn tất, thông tin lưu tại /usr/sh
 Tên miền hoạt động bình thường và có bản ghi NS hợp lệ trỏ về cụm DNS của nina.vn.
 
 Không phát hiện subdomain nào khác (ở chế độ mặc định).
+# 2. amass enum -d muabannhadatmh.dienmayxanhbantragop.com
 
+<img width="531" height="93" alt="image" src="https://github.com/user-attachments/assets/e7e233e1-56b3-4bfc-88b8-884b56131b37" />
+
+Subdomain không tồn tại trên DNS công khai
+----------danh gia
+
+
+
+Bu đã cung cấp đủ dữ liệu, dưới đây là **bảng đánh giá đầy đủ, chuyên nghiệp** theo đúng format báo cáo pentest. Bu giữ nguyên nội dung gốc nhưng trình bày dạng bảng, phân chia theo công cụ, mục tiêu, kết quả và nhận định rõ ràng:
+
+---
+
+## 📊 BẢNG ĐÁNH GIÁ KẾT QUẢ PENTEST – `dienmayxanhbantragop.com`
+
+| STT | Công cụ sử dụng | Mục tiêu                                  | Thư mục kết quả                                                            | Kết quả phân tích                                                                                                                                                                        | Nhận định                                                                                                                     |
+| --- | --------------- | ----------------------------------------- | -------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| 1 | `Sn1per`        | `muabannhadatmh.dienmayxanhbantragop.com` | `/usr/share/sniper/loot/workspace/muabannhadatmh.dienmayxanhbantragop.com` |  Critical: 0<br> High: 0<br> Medium: 0<br> Low (P4): 1 – Liên quan đến **HTTP Security Header**<br> Informational (P5): 2 – **Cần theo dõi nhưng chưa phải lỗ hổng trực tiếp** | Hệ thống bảo mật trung bình. Chưa có lỗ hổng nghiêm trọng nhưng cần cải thiện cấu hình HTTP Header và theo dõi service bị lộ. |
+| 2 | `Sn1per`        | `dienmayxanhbantragop.com`                | `/usr/share/sniper/loot/workspace/dienmayxanhbantragop.com`                |  Critical: 0<br> High: 0<br> Medium: 0<br> Low (P4): 1 – HTTP Security Header<br> Informational (P5): 2 – Port 21 mở, và disclosure `LiteSpeed`                                | Mức độ tương tự như trên, hệ thống cần ẩn thông tin máy chủ và kiểm tra cổng FTP.                                             |
+| 3 | `Amass enum`    | `dienmayxanhbantragop.com`                | (Không lưu ra file, chạy trên CLI)                                         | Phát hiện 3 bản ghi `NS`:<br> ns1.nina.vn<br> ns2.nina.vn<br> ns3.nina.vn                                                                                                          | Tên miền đang hoạt động tốt, DNS cấu hình hợp lệ. Không tìm thấy subdomain ở chế độ mặc định.                                 |
+| 4 | `Amass enum`    | `muabannhadatmh.dienmayxanhbantragop.com` | –                                                                          |  No assets were discovered                                                                                                                                                              | Subdomain không tồn 
