@@ -1,51 +1,24 @@
-x.tìm subdomainb:https://github.com/findomain/findomain
-```apt update
-git clone https://github.com/findomain/findomain.git
-cd findomain
-cargo build --release
-sudo cp target/release/findomain /usr/bin/
-findomain
-findomain -t dienmayxanhbantragop.com
-```
-<img width="845" height="736" alt="image" src="https://github.com/user-attachments/assets/6a7e56d4-24b0-4a10-9f04-0dd872ff801a" />
+nmap -p - -T4 -A -v -Pn --unprivileged --script vuln dienmayxanhbantragop.com
 
--> truy vấn qua nhiều API như: Archive.org, CertSpotter, Sublist3r, CrT.sh, Threatcrowd, AnubisDB, Threatminer, Urlscan.io và tìm thấy 8 subdomain gồm: webmail.dienmayxanhbantragop.com	Dịch vụ email
-cpanel.dienmayxanhbantragop.com, mail.dienmayxanhbantragop.com, autodiscover.dienmayxanhbantragop.com, sieuthixedapdien.dienmayxanhbantragop.com, muabanhadathm.dienmayxanhbantragop.com, webdisk.dienmayxanhbantragop.com, linkhiensi.vn.dienmayxanhbantragop.com.
 
----
+Dưới đây là định dạng lại thông tin từ hình ảnh thành bảng theo yêu cầu:
 
-# 3.4.2 : Wayback Machine robots.txt directory
-```
-git clone https://github.com/NTKien-ptitt/Exploit-_Paths_Website.git
- python3 ./Robot_Arrchive_Web.py dienmayxanhbantragop.com
-```
+| **Port**  | **Trạng thái** | **Dịch vụ**          | **Thông tin**                                                                 | **Bảo mật**                  |
+|-----------|----------------|----------------------|-------------------------------------------------------------------------------|-------------------------------|
+| **80/tcp** | Open           | HTTP (LiteSpeed)     | Web server LiteSpeed. Chạy các lệnh `/cgi-sys/defaultwebpage.cgi`. Hỗ trợ GET, POST, HEAD, OPTIONS. Không hỗ trợ RTSP. | Không phát hiện XSS, CSRF. Script kiểm tra không tìm thấy lỗi trong thời gian gần đây. |
+| **110/tcp**| Open           | POP3 (Dovecot)       | Dịch vụ nhận email bằng POP3.                                              | Không phát hiện lỗi.         |
+| **143/tcp**| Open           | IMAP (Dovecot)       | Dịch vụ đọc email IMAP.                                                   | Không phát hiện lỗi.         |
+| **443/tcp**| Open           | HTTPS (LiteSpeed)    | Giống port 80, nhưng sử dụng SSL/TLS.                                       | Không phát hiện lỗi. Test ssl-ccs-injection bị timeout. |
+| **465/tcp**| Open           | SMTPS (Unknown)      | SMTP qua SSL/TLS. Hệ thống "Mail Secure System". Hỗ trợ AUTH, PIPELINING, gửi mail lớn (50MB). | Không phát hiện lỗi.         |
+| **587/tcp**| Open           | SMTP (Unknown)       | SMTP dành cho client gửi mail. Giống port 465, thêm hỗ trợ STARTTLS.         | Không bị CVE-2010-4344.      |
+| **993/tcp**| Open           | IMAPS (Unknown)      | IMAP qua SSL/TLS. Có thể là Dovecot.                                        | Không phát hiện lỗi.         |
+| **995/tcp**| Open           | POP3S (Unknown)      | POP3 qua SSL/TLS. Có thể là Dovecot.                                        | Không phát hiện lỗi.         |
 
-<img width="1083" height="241" alt="image" src="https://github.com/user-attachments/assets/b42cb90f-7130-47d7-a3ce-713f2e391f45" />
+### Ghi chú:
+- Bảng trên được xây dựng dựa trên dữ liệu từ hình ảnh, với các cột được sắp xếp lại để rõ ràng và đồng nhất.
+- Thông tin bảo mật phản ánh các kết quả kiểm tra được cung cấp, bao gồm cả các lỗi không phát hiện được hoặc timeout trong quá trình kiểm tra.
+- Nếu cần phân tích chi tiết hơn hoặc bổ sung thông tin, hãy cho tôi biết!                                                                            |
 
--> đang kiểm tra robots.txt của website này trên Wayback Machine (web.archive.org) để tìm các đường dẫn mà có thể đã từng bị chặn hoặc được liệt kê trong quá khứ.hai đường dẫn đã từng xuất hiện trong file robots.txt là dienmayxanhbantragop.com/administrator/ dienmayxanhbantragop.com/cgi-bin/
----
+<img width="1098" height="507" alt="image" src="https://github.com/user-attachments/assets/d5bbc504-7daa-4551-a31f-1ccf4485ef97" />
 
 ---
-
-webscan vulnerability
-
-```
-apt update
-sudo apt install golang
-go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
-nuclei -update-templates
-nuclei -u https://dienmayxanhbantragop.com -t /home/kali/.local/nuclei-templates
-```
-
-
----
-# 4.4 Osmedeus
-GitHub: https://github.com/j3ssie/Osmedeus
-```
-bash <(curl -fsSL https://raw.githubusercontent.com/osmedeus/osmedeus-base/master/install.sh)
-go install -v github.com/j3ssie/osmedeus@latest
-
-osmedeus scan -f vuln -t example.com           # Scan lỗ hổng
-osmedeus scan -f extensive -t example.com      # Quét sâu và toàn diện
-```
-
