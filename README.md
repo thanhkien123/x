@@ -22,3 +22,25 @@ Dưới đây là định dạng lại thông tin từ hình ảnh thành bảng
 <img width="1098" height="507" alt="image" src="https://github.com/user-attachments/assets/d5bbc504-7daa-4551-a31f-1ccf4485ef97" />
 
 ---
+# SNIPER
+# 1. sniper -t muabannhadatmh.dienmayxanhbantragop.com 
+Sau khi quá trình recon va scanning hoàn tất, thông tin lưu tại /usr/share/sniper/loot/workspace/dienmayxanhbantragop.com và kết quả scanning lưu tại thư mục "vulnerabilities"
+ cho biết có Critical: 0, High: 0, Medium: 0, Low (P4): 1 – Liên quan đến HTTP Security Header, Informational (P5): 2 – Cần theo dõi nhưng chưa phải lỗ hổng trực tiếp.
+
+<img width="953" height="522" alt="image" src="https://github.com/user-attachments/assets/1ec154cb-d099-471f-b1e5-5a73ec2adb7a" />
+
+
+# 2. sniper -t dienmayxanhbantragop.com 
+Sau khi quá trình recon va scanning hoàn tất, thông tin lưu tại /usr/share/sniper/loot/workspace/dienmayxanhbantragop.com và kết quả scanning lưu tại thư mục "vulnerabilities"
+ cho biết có Critical: 0, High: 0, Medium: 0, Low (P4): 1 – Liên quan đến HTTP Security Header, Informational (P5): 2 – Cần theo dõi nhưng chưa phải lỗ hổng trực tiếp.
+ <img width="833" height="526" alt="image" src="https://github.com/user-attachments/assets/0dfdfbc6-e850-4226-a09d-ba81aed9e33f" />
+
+# AMASS
+# 1. amass enum -d dienmayxanhbantragop.com
+
+<img width="684" height="150" alt="image" src="https://github.com/user-attachments/assets/d7d4fe52-e4ed-4e9d-9caa-570903b8922e" />
+
+Tên miền hoạt động bình thường và có bản ghi NS hợp lệ trỏ về cụm DNS của nina.vn.
+
+Không phát hiện subdomain nào khác (ở chế độ mặc định).
+
